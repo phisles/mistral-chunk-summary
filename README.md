@@ -1,3 +1,5 @@
+![Minstrel Typing](minstrel_typing.png)
+
 # Transcript Summarization Program
 
 This program reads a transcript from a file, splits it into chunks, summarizes each chunk using the Mistral model via the Ollama API, and then iterates through a process to generate and select the best final summaries.
