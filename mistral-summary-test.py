@@ -113,7 +113,7 @@ def select_best_summary(summaries):
         return None
 
 # Path to the transcript file
-transcript_file_path = '/Users/philip/Desktop/Code/transcript-summary/Transcripts/completed/Interview Sample.txt'
+transcript_file_path = 'Interview Sample.txt'
 
 # Read the transcript
 transcript = read_transcript(transcript_file_path)
