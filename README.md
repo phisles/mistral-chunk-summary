@@ -1,4 +1,4 @@
-![Minstrel Typing](minstrel_typing.png)
+![Minstrel Typing](minstrel-typing.png)
 
 # Transcript Summarization Program
 
