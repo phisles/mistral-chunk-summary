@@ -2,7 +2,7 @@
 
 # Chunked Transcript Summarization Via Mistral
 
-This program reads a transcript from a file, splits it into chunks, summarizes each chunk using the Mistral model via the Ollama API, and then iterates through a process to generate and select the best final summaries.
+This program reads transcripts from files, splits them into chunks, summarizes each chunk using the Mistral model via the Ollama API, and then iterates through a process to generate and select the best final summaries.
 
 ## Prerequisites
 
@@ -22,7 +22,7 @@ This program reads a transcript from a file, splits it into chunks, summarizes e
 
 ### 1. Reading the Transcript
 
-The program reads the transcript from a file specified by the `transcript_file_path` variable.
+The program reads transcripts from files specified by the `transcript_folder_path` variable.
 
 ### 2. Splitting into Sentences
 
@@ -44,15 +44,19 @@ The `select_best_summary` function selects the best summary from a list of summa
 
 The program loops through a specified number of iterations and rounds to generate the final summaries. It stores the best summaries from each iteration.
 
-### 7. Writing Results to File
+### 7. Rephrasing as a Single Transcript
 
-The program writes the original transcript, chunk summaries, final summaries, and the best final summaries to a `Final-Summary.txt` file.
+The `rephrase_as_single_transcript` function rephrases the final summary to ensure it reads cohesively as a single interview or incident.
+
+### 8. Writing Results to File
+
+The program writes the original transcript, chunk summaries, and the rephrased best final summaries to `Final-Summary-<filename>.txt` files.
 
 ## How to Use
 
 1. **Set Up the Environment**: Ensure you have Python and NLTK installed.
 2. **Configure the Variables**: Set the `NUM_ITERATIONS` and `NUM_ROUNDS` variables at the top of the script according to your needs.
-3. **Specify the Transcript File Path**: Update the `transcript_file_path` variable to point to your transcript file.
+3. **Specify the Transcript Folder Path**: Update the `transcript_folder_path` variable to point to your transcript folder.
 4. **Run the Script**: Execute the script to generate the summaries.
 
 ### Example
@@ -60,4 +64,4 @@ The program writes the original transcript, chunk summaries, final summaries, an
 ```python
 NUM_ITERATIONS = 5
 NUM_ROUNDS = 5
-transcript_file_path = '/path/to/your/transcript.txt'
+transcript_folder_path = '/path/to/your/transcript-folder'
