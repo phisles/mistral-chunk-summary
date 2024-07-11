@@ -151,7 +151,7 @@ for j in range(NUM_ITERATIONS):
         # Combine chunk summaries and summarize them
         combined_summary = ' '.join(chunk_summaries)
         final_summary = summarize_text(
-            f"Summarize the following text, which is a collection of summaries from different chunks of the same transcript, into a single paragraph no longer than 600 characters: {combined_summary}",
+            f"Summarize the following text, which is a collection of summaries from different chunks of the same transcript, into a single paragraph no longer than 600 characters. These chunks never constitute seperate conversations. They are always the same interaction: {combined_summary}",
             prompt_suffix="Summarize the following text into a single paragraph no longer than 600 characters:"
         )
         
