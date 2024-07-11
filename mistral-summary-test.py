@@ -1,13 +1,17 @@
 import requests
 import json
 import nltk
+import os
 
 # Download the Punkt tokenizer models if not already downloaded
 nltk.download('punkt')
 
 # Define the number of iterations and rounds
-NUM_ITERATIONS = 5
-NUM_ROUNDS = 3
+NUM_ITERATIONS = 2
+NUM_ROUNDS = 2
+
+# Path to the folder containing transcript files
+transcript_folder_path = '/Users/philip/Desktop/Code/transcript-summary/Transcripts/completed/'
 
 # Define the API endpoint
 url = "http://localhost:11434/api/generate"
@@ -34,7 +38,7 @@ def split_into_chunks(sentences, chunk_size=2):
     return chunks
 
 # Function to summarize a text using the Mistral model
-def summarize_text(text, prompt_suffix="Summarize the following text:"):
+def summarize_text(text, prompt_suffix="Summarize the following text, which is a portion of the same interaction. Do not include any mention of which interaction it is. Only summarize:"):
     # Define the request payload
     payload = {
         "model": "mistral",
@@ -112,69 +116,103 @@ def select_best_summary(summaries):
         print("Failed to get a response:", response.status_code, response.text)
         return None
 
-# Path to the transcript file
-transcript_file_path = 'Interview Sample.txt'
-
-# Read the transcript
-transcript = read_transcript(transcript_file_path)
-
-# Split transcript into sentences
-sentences = split_into_sentences(transcript)
-
-# Ensure at least two chunks
-chunk_size = max(1, len(sentences) // 2)
-
-# List to store the best final summaries
-best_final_summaries = []
-
-for j in range(NUM_ITERATIONS):
-    print(f"\n{'=' * 40}\nIteration {j + 1}\n{'=' * 40}\n")
+# Function to rephrase the final summary as a single transcript
+def rephrase_as_single_transcript(summary):
+    prompt_suffix = "Rephrase the following summary to sound like it describes a single interview or incident in a single paragraph. Do not add any adjectives or subjective descriptions of the interview. Begin and end the summary with only the facts:"
     
-    # Repeat the summarization process for the specified number of rounds
-    final_summaries = []
-    for i in range(NUM_ROUNDS):
-        print(f"\n{'*' * 40}\nProcessing Round {i + 1}\n{'*' * 40}\n")
-        
-        # Split sentences into chunks
-        chunks = split_into_chunks(sentences, chunk_size)
-
-        # Summarize each chunk
-        chunk_summaries = []
-        for idx, chunk in enumerate(chunks):
-            summary = summarize_text(chunk)
-            chunk_summaries.append(summary)
-            # Print the first 50 characters of the chunk and its summary
-            print(f"Chunk {idx + 1} (first 50 characters):\n{chunk[:50]}\n")
-            print(f"Summary {idx + 1}:\n{summary}\n")
-            print(f"{'-' * 40}\n")
-        
-        # Combine chunk summaries and summarize them
-        combined_summary = ' '.join(chunk_summaries)
-        final_summary = summarize_text(
-            f"Summarize the following text, which is a collection of summaries from different chunks of the same transcript, into a single paragraph no longer than 600 characters. These chunks never constitute seperate conversations. They are always the same interaction: {combined_summary}",
-            prompt_suffix="Summarize the following text into a single paragraph no longer than 600 characters:"
-        )
-        
-        # Add final summary to list
-        if final_summary:
-            final_summaries.append(final_summary)
-        
-        # Print the final summary of this round
-        print(f"\n{'>' * 40}\nFinal Summary for Round {i + 1}:\n{final_summary}\n{'<' * 40}\n")
-
-    # Select the best summary from the final summaries
-    best_summary = select_best_summary(final_summaries)
-    best_final_summaries.append(best_summary)
-
-# Write results to Final-Summary.txt
-with open('Final-Summary.txt', 'w') as file:
-    file.write(f"Original Transcript:\n{transcript}\n\n")
-    file.write(f"Number of chunks: {len(split_into_chunks(sentences, chunk_size))}\n")
-    file.write(f"Character count of each chunk: {[len(chunk) for chunk in split_into_chunks(sentences, chunk_size)]}\n\n")
+    payload = {
+        "model": "mistral",
+        "prompt": f"{prompt_suffix} {summary}",
+        "params": {
+            "stop": ["[INST]", "[/INST]"]
+        }
+    }
     
-    for j, best_final_summary in enumerate(best_final_summaries, 1):
-        file.write(f"Final Summary {j}:\n{best_final_summary}\n")
-        file.write(f"Character count of best final summary {j}: {len(best_final_summary)}\n\n")
-        file.write(f"{'=' * 40}\n")
+    response = requests.post(url, headers=headers, data=json.dumps(payload))
+    
+    if response.status_code == 200:
+        try:
+            lines = response.content.decode('utf-8').splitlines()
+            responses = []
+            for line in lines:
+                json_line = json.loads(line)
+                responses.append(json_line.get('response', ''))
+            final_summary = ''.join(responses)
+            return final_summary
+        except json.JSONDecodeError as e:
+            print("JSONDecodeError:", str(e))
+            print("Raw response content (as text):", response.text)
+    else:
+        print("Failed to get a response:", response.status_code, response.text)
+        return None
 
-print("\nSummary process completed. Check the 'Final-Summary.txt' file for results.")
+# Iterate over all transcript files in the specified folder
+for filename in os.listdir(transcript_folder_path):
+    if filename.endswith(".txt"):
+        transcript_file_path = os.path.join(transcript_folder_path, filename)
+
+        # Read the transcript
+        transcript = read_transcript(transcript_file_path)
+
+        # Split transcript into sentences
+        sentences = split_into_sentences(transcript)
+
+        # Ensure at least two chunks
+        chunk_size = max(1, len(sentences) // 2)
+
+        # List to store the best final summaries
+        best_final_summaries = []
+
+        for j in range(NUM_ITERATIONS):
+            print(f"\n{'=' * 40}\nIteration {j + 1} for {filename}\n{'=' * 40}\n")
+            
+            # Repeat the summarization process for the specified number of rounds
+            final_summaries = []
+            for i in range(NUM_ROUNDS):
+                print(f"\n{'*' * 40}\nProcessing Round {i + 1} for {filename}\n{'*' * 40}\n")
+                
+                # Split sentences into chunks
+                chunks = split_into_chunks(sentences, chunk_size)
+
+                # Summarize each chunk
+                chunk_summaries = []
+                for idx, chunk in enumerate(chunks):
+                    summary = summarize_text(chunk)
+                    chunk_summaries.append(summary)
+                    # Print the first 50 characters of the chunk and its summary
+                    print(f"Chunk {idx + 1} (first 50 characters):\n{chunk[:50]}\n")
+                    print(f"Summary {idx + 1}:\n{summary}\n")
+                    print(f"{'-' * 40}\n")
+                
+                # Combine chunk summaries and summarize them
+                combined_summary = ' '.join(chunk_summaries)
+                final_summary = summarize_text(
+                    f"You will be provided with summaries of chunks from the same interaction. Summarize the following text, which is a collection of summaries from different chunks of the same transcript, into a single paragraph. These chunks never constitute separate conversations. They are always the same interaction. Never imply in your output that these are different interactions or separate occasions: {combined_summary}",
+                    prompt_suffix="Summarize the following text from the same interaction into a single paragraph:"
+                )
+                
+                # Add final summary to list
+                if final_summary:
+                    final_summaries.append(final_summary)
+                
+                # Print the final summary of this round
+                print(f"\n{'>' * 40}\nFinal Summary for Round {i + 1} for {filename}:\n{final_summary}\n{'<' * 40}\n")
+
+            # Select the best summary from the final summaries
+            best_summary = select_best_summary(final_summaries)
+            best_final_summaries.append(best_summary)
+
+        # Rephrase the final summaries as single transcript summaries
+        rephrased_summaries = [rephrase_as_single_transcript(summary) for summary in best_final_summaries]
+
+        # Write results to Final-Summary.txt
+        summary_filename = f'Final-Summary-{filename}.txt'
+        with open(summary_filename, 'w') as file:
+            file.write(f"Original Transcript ({filename}):\n{transcript}\n\n")
+            
+            for j, rephrased_summary in enumerate(rephrased_summaries, 1):
+                file.write(f"Final Summary {j}:\n{rephrased_summary}\n")
+                file.write(f"Character count of best final summary {j}: {len(rephrased_summary)}\n\n")
+                file.write(f"{'=' * 40}\n")
+
+print("\nSummary process completed. Check the 'Final-Summary-<filename>.txt' files for results.")
