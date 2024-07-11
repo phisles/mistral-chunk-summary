@@ -17,12 +17,14 @@ This program reads transcripts from files, splits them into chunks, summarizes e
 
 - **NUM_ITERATIONS**: This variable sets the number of times the entire summarization process will be repeated. Adjust this for testing or deployment.
 - **NUM_ROUNDS**: This variable sets the number of summarization rounds per iteration.
+- **transcript_folder_path**: This variable sets the path to the folder containing transcript files, if processing multiple transcripts.
+- **transcript_file_path**: This variable sets the path to a single transcript file, if processing a single transcript.
 
 ## Program Elements
 
 ### 1. Reading the Transcript
 
-The program reads transcripts from files specified by the `transcript_folder_path` variable.
+The program reads transcripts from files specified by the `transcript_folder_path` or `transcript_file_path` variable, depending on whether you are processing multiple transcripts or a single transcript.
 
 ### 2. Splitting into Sentences
 
@@ -55,13 +57,12 @@ The program writes the original transcript, chunk summaries, and the rephrased b
 ## How to Use
 
 1. **Set Up the Environment**: Ensure you have Python and NLTK installed.
-2. **Configure the Variables**: Set the `NUM_ITERATIONS` and `NUM_ROUNDS` variables at the top of the script according to your needs.
-3. **Specify the Transcript Folder Path**: Update the `transcript_folder_path` variable to point to your transcript folder.
-4. **Run the Script**: Execute the script to generate the summaries.
+2. **Configure the Variables**: Set the `NUM_ITERATIONS`, `NUM_ROUNDS`, and either `transcript_folder_path` or `transcript_file_path` variables at the top of the script according to your needs.
+3. **Run the Script**: Execute the script to generate the summaries.
 
-### Example
+### Example for Single Transcript
 
 ```python
 NUM_ITERATIONS = 5
 NUM_ROUNDS = 5
-transcript_folder_path = '/path/to/your/transcript-folder'
+transcript_file_path = '/path/to/your/transcript.txt'
