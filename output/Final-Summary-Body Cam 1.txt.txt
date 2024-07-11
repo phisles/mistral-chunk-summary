@@ -1,0 +1,28 @@
+Original Transcript (Body Cam 1.txt):
+Stop day restoration is expired. Can I see your garage last insurance please? Yes sir. Where are you headed to tonight? 2-7-3-5. Okay. Want to get some stuff? Come from home? Yeah. I know that Penn State, the University of Central Florida football game that happened in Ireland a few weeks ago. I've been in Ireland for a few weeks, so it's been, I just got back in a while ago. Oops. So, I just, I've been kind of getting used to the American times. I forgot. Let me just check and make sure that's the old insurance. Still good. Make sure that's the right one. Yeah, see I haven't even had a chance to put in my new insurance. There's the one that expires on the... Do you have current insurance? I do have current insurance, yes sir. I just, like I said, I was out of country for a while. So, I haven't had a chance to go through all my stuff yet. So, I work in IT too, so a lot of long nights. Okay. Well, just so you know, registration is one that comes a couple months before it's actually due. It comes to your house and you just mail it back in and they send you a brand new one. Yeah, I know. It's strange like that, right? I understand. I was pulling 50, 60 hour weeks and I just let stuff get by and I apologize. But I don't, it's not like I was purposely trying to skirt the system, I promise you.
+
+Final Summary 1:
+ During an interview, an individual acknowledged that their garage insurance restoration is outdated due to a busy work schedule and travel commitments, which included a trip to Ireland. They clarify they have not deliberately violated system rules or attempted manipulation. The individual expresses regret for any resulting inconvenience and states that the renewal can be facilitated by mailing the required documents ahead of the expiration date.
+Character count of best final summary 1: 450
+
+========================================
+Final Summary 2:
+ During the interview, an individual acknowledged that their stop day restoration was past due, attributing this to excessive work hours and a recent trip to Ireland. The person expressed regret for any inconvenience caused, clarifying that they unintentionally attempted no system bypass. Additionally, they disclosed possessing garage insurance, but were unable to update it at present. In conversation, they recalled enjoying a football game during their sojourn in Ireland.
+Character count of best final summary 2: 477
+
+========================================
+Final Summary 3:
+ During a recent interaction, an individual, who had recently returned from Ireland, admitted that they had allowed their stop day restoration to lapse due to a mix-up over time zones from attending a football game while overseas and extended absences from the country. This oversight resulted in neglected updates for certain affairs, including insurance matters. The individual emphasized that this lapse was unintentional and not an attempt to circumvent or act dishonestly. In response, the other party acknowledged current coverage but clarified that renewal had been delayed due to prolonged work hours and overseas travel. Details regarding the insurance renewal process were provided during the conversation.
+Character count of best final summary 3: 716
+
+========================================
+Final Summary 4:
+ During the interview, it was disclosed that the interviewee had overlooked the expiration date of a stop day restoration for their car insurance. This oversight occurred after their recent return from Ireland, where they were readjusting to American time zones. The interviewee admitted that their work commitments have prevented them from renewing the policy, and emphasized that this delay was unintentional.
+Character count of best final summary 4: 411
+
+========================================
+Final Summary 5:
+ During the interview, the individual acknowledges possessing active insurance coverage at present. However, they express regret for the delayed renewal due to excessive work hours in IT, coupled with adjustment difficulties following a recent trip to Ireland. Upon being informed that they can post the renewed registration for a replacement, they comprehend the situation and maintain their honesty in dealing with this matter.
+Character count of best final summary 5: 429
+
+========================================

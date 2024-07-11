@@ -1,0 +1,28 @@
+Original Transcript (Body Cam 2.txt):
+vehicle peacefully with me be a man about it step out peacefully be a man about it and let's deal with the consequences or i start yanking in you and get you out of here and if you keep resisting you're gonna get a taser no i'm not gonna fight so i'm just telling i will pull over and we're done with this no no i will just be a out of this vehicle now i've out of this vehicle now brian out of this vehicle now let's let's step out you know this out of this vehicle out of this vehicle you're resisting an officer you know this just think about it i'm thinking about it i'm not losing my career over you know i'm not gonna leave it either quit so i will go and pull over quit no hold on i will go pull over no we're out of the vehicle now no no listen to me brian you're already
+
+Final Summary 1:
+ During the recounted incident, an individual found themselves directed by a law enforcement officer to leave their automobile calmly. Initially hesitant, the person ultimately consented to stop. Although initially cooperative, the officer felt compelled to demand an immediate departure from the vehicle, citing perceived resistance as the reason for this demand.
+Character count of best final summary 1: 364
+
+========================================
+Final Summary 2:
+ During the recounted encounter, an individual identified as Brian was instructed by a perceived figure of authority to vacate his vehicle harmoniously, with the warning that physical force or taser might be employed if compliance was not given. Initially defying the order, Brian eventually agreed to halt and expressed anxiety about potential job-related or career repercussions.
+Character count of best final summary 2: 381
+
+========================================
+Final Summary 3:
+ During an unspecified incident, a police officer instructed an individual named Brian to leave his vehicle. Brian initially declined, prompting a warning that force might be used and a taser could be deployed. However, Brian clarified he wouldn't resist but intended to comply by pulling over. Despite this assurance, additional resistance ensued. Eventually, Brian exited the vehicle.
+Character count of best final summary 3: 386
+
+========================================
+Final Summary 4:
+ During the encounter, Officer X directed Brian to leave his vehicle in a non-violent manner. This request came shortly after Brian had initially hesitated, expressing apprehension due to fears of professional consequences. The officer cautioned Brian that force could potentially be employed if the situation demanded it.
+Character count of best final summary 4: 322
+
+========================================
+Final Summary 5:
+ During a specific incident, an individual identified as Brian was directed to exit his car due to unspecified circumstances. Initially resistant, he eventually complied by pulling over and stepping out of the vehicle. The officer involved communicated that force could be used if required, although it's uncertain whether Brian had already exited the vehicle during this conversation.
+Character count of best final summary 5: 385
+
+========================================

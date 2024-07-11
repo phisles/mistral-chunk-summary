@@ -1,0 +1,28 @@
+Original Transcript (Body Cam 3.txt):
+All right, but... Is it good? Did you issue it already? I thought you hit it. Look at that, man. You like three cars faster. Man, how am I going to pull over three cars at the same time? Damn! Well, give me my ticket. I wear glasses anyway. That shit ain't going to win. All right, here's your court appearance for driving without your license on you, okay? You know that's a misdemeanor in the state, right? You got to have your license on you. What's up? You know that, right? Yeah, I just left the gym. You know where I am, bro. Come on, man. I understand. I was just going to write you the waveable ticket for the tail light and stuff, but then you didn't have your driver's license on you, so I got to write you for that. For the tail light? Yeah, for the brake light. Not working in the front tint. Those are waveable, okay? So if you get those taken care of within 10 days, you'll be good to go. What are those? What drives? Like, you get it fixed, and then you go talk to any police officer, and they'll sign off on it that it's been fixed, and it's good to go. All right, but this is your appearance on the front here? Yeah. This is your appearance date for the driving without your license on you? Man, that's ridiculous. All right. Yeah. Why'd you pull me over, man? Like, the real reason, bro. Why? Yeah. Because our chief doesn't like front-tinted windows? Fuck the chief. I don't care. I don't care. I don't care about my shit. Fuck you. Fuck you, I just said. Your windows tinted, aren't they? Nope. I don't know. You can give me a fuck about it. Chief. Don't trade the bills. You all set them? You all set? Yeah. You want me off? Yeah. You good? Oh, well, yeah. Back him the shake out of your car, too. What? The weed on the floor. The weed on the fucking floor? Shut up. Okay. Where do you see weed at? Where do you see weed? No. What's that green thing right there? What? What's what? What's in Iraq now? Or that? Could possibly be marijuana. What's that? What's that? All right. All right. All right. Are we searching your car? What is the problem? You're the problem. Nobody's searching. Nobody's searching. Where's your car? Calm down. What is weed being here?
+
+Final Summary 1:
+ During a traffic stop, an individual driving a vehicle with tinted windows, a malfunctioning brake light, and lacking a valid driver's license disputed the reason for the pullover. The driver contested the validity of the stop and asserted that there was no marijuana in the vehicle. However, no further explanation or resolution was provided by the officer, nor was there any explicit mention of a search being conducted during the incident.
+Character count of best final summary 1: 443
+
+========================================
+Final Summary 2:
+ During a traffic stop, an individual was found driving without a valid license and committing vehicle violations. Suspicion arose concerning potential marijuana in the vehicle, but the driver denied any drug possession. The officer requested permission to search the car, which was declined by the driver. Instead, the driver received a ticket for driving without a license. In addition, the driver agreed to rectify the faulty brake light within 10 days and obtain approval for their window tint modification.
+Character count of best final summary 2: 511
+
+========================================
+Final Summary 3:
+ During an encounter, a police officer stopped a motorist due to tinted windows, a faulty brake light, and driving without a valid license. The driver exhibited frustration throughout the interaction and vehemently denied any wrongdoing concerning suspicious items in the vehicle. The driver also contested the officer's proposal for a search of their vehicle, escalating the conversation into a confrontation. However, no resolution was reached before the police officer left the scene.
+Character count of best final summary 3: 487
+
+========================================
+Final Summary 4:
+ During a traffic stop, a police officer flagged down a driver for driving with an expired license and heavily tinted front windows. Upon suspicion of marijuana in the vehicle, the officer did not conduct a search during this encounter. Instead, the driver received a summons to appear in court over the invalid license, while the tail light and window tint infractions were issued as waivable tickets if rectified within ten days. However, the interaction concluded with escalating tension, leaving the matter of suspected marijuana unresolved.
+Character count of best final summary 4: 545
+
+========================================
+Final Summary 5:
+ During a traffic stop, a driver was found to be driving with tinted windows and lacking a driver's license on their person. The driver was issued a court summons for driving without a license, a misdemeanor offense. Other violations related to the tinted windows were resolved with a citation that could be waived within 10 days. However, suspicion of marijuana in the vehicle arose, prompting neither party to reach a resolution as they both grew increasingly agitated without further action being taken.
+Character count of best final summary 5: 506
+
+========================================
